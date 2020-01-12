@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Wall : MonoBehaviour {
+public class ResetWall : MonoBehaviour {
 
     #region [ Unity Functions ]
 
@@ -9,7 +9,7 @@ public class Wall : MonoBehaviour {
             Ground ground = collision.gameObject.GetComponent<Ground>();
             ground.CreateGround();
             ground.DestroyGroundFather();
-        }else if (collision.tag.Equals("Bird") || collision.tag.Equals("Cactus")) {
+        }else if (collision.tag.Equals("Bird") || collision.tag.Equals("Cactus") || collision.tag.Equals("Cloud")) {
             Destroy(collision.gameObject);
         }
     }

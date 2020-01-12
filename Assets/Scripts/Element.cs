@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Bird : BackgroundElement {
+public class Element : BackgroundElement {
 
     #region [ Unity Functions ]
 

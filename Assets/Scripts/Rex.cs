@@ -26,7 +26,7 @@ public class Rex : MonoBehaviour {
     private void Update() {
         this.OnGround = Physics2D.Linecast(this.transform.position, this.OnGroundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && this.OnGround) {
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && this.OnGround && !this.Lowering) {
             this.Jumping = true;
         }
 

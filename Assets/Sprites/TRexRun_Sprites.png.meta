@@ -13,10 +13,10 @@ TextureImporter:
     second: Bird_Sprite1
   - first:
       213: 3723013092008938913
-    second: SmallOneTree_Sprite
+    second: SmallOneCactus_Sprite
   - first:
       213: -3026388990133382517
-    second: BigOneTree_Sprite
+    second: BigOneCactus_Sprite
   - first:
       213: 7882782046829741534
     second: TRex_Sprite1
@@ -91,16 +91,16 @@ TextureImporter:
     second: TRexRun_Sprites_18
   - first:
       213: -6094577035105966497
-    second: SmallTwoTree_Sprite
+    second: SmallTwoCactus_Sprite
   - first:
       213: 2134737244908192422
-    second: SmallThreeTree_Sprite
+    second: SmallThreeCactus_Sprite
   - first:
       213: 8665160359595959990
-    second: BigTwoTree_Sprite
+    second: BigTwoCactus_Sprite
   - first:
       213: -5365826985830394785
-    second: BigThreeTree_Sprite
+    second: BigThreeCactus_Sprite
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -248,7 +248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SmallOneTree_Sprite
+      name: SmallOneCactus_Sprite
       rect:
         serializedVersion: 2
         x: 228
@@ -269,7 +269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigOneTree_Sprite
+      name: BigOneCactus_Sprite
       rect:
         serializedVersion: 2
         x: 332
@@ -773,7 +773,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SmallTwoTree_Sprite
+      name: SmallTwoCactus_Sprite
       rect:
         serializedVersion: 2
         x: 245
@@ -794,7 +794,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SmallThreeTree_Sprite
+      name: SmallThreeCactus_Sprite
       rect:
         serializedVersion: 2
         x: 279
@@ -815,7 +815,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigTwoTree_Sprite
+      name: BigTwoCactus_Sprite
       rect:
         serializedVersion: 2
         x: 357
@@ -836,7 +836,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigThreeTree_Sprite
+      name: BigThreeCactus_Sprite
       rect:
         serializedVersion: 2
         x: 408

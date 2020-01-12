@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Rex
   - Bird
-  - Tree
   - Ground
   - Cloud
   - ResetWall
+  - Cactus
   layers:
   - Default
   - TransparentFX
