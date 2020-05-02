@@ -7,15 +7,17 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Manager;
 
+    private GameObject GameOverText;
     private GameObject RestartButton;
-    private GameObject TRex;
-    private Rex TRexManager;
+    private GameObject Rex;
+    private Rex RexManager;
+    private ScoreHandler ScoreHandler;
 
     private GameObject BackgroundElements;
 
     private bool GameOver;
-    public int Score;
-    public int HighScore;
+    public float SpeedAmount = 0.1f;
+    public float SpeedScoreAmount = 1f;
 
     #endregion
 
@@ -33,12 +35,14 @@ public class GameManager : MonoBehaviour {
             this.RestartGame();
         }
 
-        this.GameOver = this.TRexManager.IsDead();
+        this.GameOver = this.RexManager.IsDead();
 
         if (this.GameOver) {
             this.FinishGame();
         } else {
-            this.IncreaseVelocity();
+            if (Mathf.Round(this.ScoreHandler.Score) % 100 == 0) {
+                this.IncreaseVelocity();
+            }
         }
     }
 
@@ -56,25 +60,38 @@ public class GameManager : MonoBehaviour {
 
     private void StartGame(Scene scene, LoadSceneMode mode) {
         this.GameOver = false;
-        this.Score = 0;
         Time.timeScale = 1;
 
-        this.RestartButton = GameObject.Find("RestartButton");
-        this.TRex = GameObject.Find("Rex");
-
-        if(this.RestartButton != null)
-            this.RestartButton.SetActive(false);
-
-        this.TRexManager = this.TRex.GetComponent<Rex>();
+        this.ScoreHandler = GameObject.FindObjectOfType<ScoreHandler>();
         this.BackgroundElements = GameObject.FindWithTag("Background");
+        this.RestartButton = GameObject.Find("RestartButton");
+        this.Rex = GameObject.Find("Rex");
+        this.GameOverText = GameObject.Find("GameOver");
+        this.RexManager = this.Rex.GetComponent<Rex>();
+        
+        if(this.GameOverText != null)
+            this.GameOverText.SetActive(false);
+
+        if (this.RestartButton != null)
+            this.RestartButton.SetActive(false);
     }
 
     private void IncreaseVelocity() {
+        BackgroundElement[] elements = this.BackgroundElements.GetComponentsInChildren<BackgroundElement>();
 
+        foreach (BackgroundElement element in elements) {
+            element.IncreaseSpeed(this.SpeedAmount);
+        }
+
+        this.ScoreHandler.IncreaseScoreSpeed(this.SpeedScoreAmount);
+        Debug.Log("Increase");
     }
 
     private void FinishGame() {
         this.RestartButton.SetActive(true);
+        this.GameOverText.SetActive(true);
+        this.ScoreHandler.IncreaseScore = false;
+        this.ScoreHandler.UpdateHighScore();
         if (Time.timeScale > 0f)
             Time.timeScale -= 0.25f;
     }

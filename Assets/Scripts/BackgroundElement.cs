@@ -7,6 +7,12 @@ public abstract class BackgroundElement : MonoBehaviour{
     [SerializeField]
     public float Speed = 1f;
 
+    [SerializeField]
+    private string Name;
+
+    [SerializeField]
+    private bool IncreaseElementSpeed = false;
+
     #endregion
 
     #region [ Protected Functions ]
@@ -18,7 +24,8 @@ public abstract class BackgroundElement : MonoBehaviour{
     #region [ Public Functions ]
 
     public void IncreaseSpeed(float amount) {
-        this.Speed += amount;
+        if(this.IncreaseElementSpeed)
+            this.Speed += amount;
     }
 
     #endregion
