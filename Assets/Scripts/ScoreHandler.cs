@@ -10,9 +10,7 @@ public class ScoreHandler : MonoBehaviour {
 
     public float Score;
     public float HighScore;
-
     public float PointsPerSecond;
-
     public bool IncreaseScore;
 
     #endregion
@@ -44,7 +42,6 @@ public class ScoreHandler : MonoBehaviour {
 
     public void UpdateHighScore() {
         if (this.Score > this.HighScore) {
-            Debug.Log("New high");
             this.HighScore = this.Score;
             PlayerPrefs.SetFloat("HighScore", this.HighScore);
         }

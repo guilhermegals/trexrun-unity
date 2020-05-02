@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour {
     public float SpeedAmount = 0.1f;
     public float SpeedScoreAmount = 1f;
 
+    private float IncreaseDelay = 0.5f;
+    private float NextIncrease;
+
     #endregion
 
     #region [ Unity Functions ]
@@ -68,8 +71,8 @@ public class GameManager : MonoBehaviour {
         this.Rex = GameObject.Find("Rex");
         this.GameOverText = GameObject.Find("GameOver");
         this.RexManager = this.Rex.GetComponent<Rex>();
-        
-        if(this.GameOverText != null)
+
+        if (this.GameOverText != null)
             this.GameOverText.SetActive(false);
 
         if (this.RestartButton != null)
@@ -77,6 +80,9 @@ public class GameManager : MonoBehaviour {
     }
 
     private void IncreaseVelocity() {
+        if (Time.time < this.NextIncrease)
+            return;
+
         BackgroundElement[] elements = this.BackgroundElements.GetComponentsInChildren<BackgroundElement>();
 
         foreach (BackgroundElement element in elements) {
@@ -84,7 +90,7 @@ public class GameManager : MonoBehaviour {
         }
 
         this.ScoreHandler.IncreaseScoreSpeed(this.SpeedScoreAmount);
-        Debug.Log("Increase");
+        this.NextIncrease = Time.time + this.IncreaseDelay;
     }
 
     private void FinishGame() {
