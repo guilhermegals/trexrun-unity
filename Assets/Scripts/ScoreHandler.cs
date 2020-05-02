@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreHandler : MonoBehaviour {
@@ -14,6 +15,7 @@ public class ScoreHandler : MonoBehaviour {
     public float HighScore;
     [HideInInspector]
     public bool IncreaseScore;
+    public bool CheckPoint = false;
     public float PointsPerSecond;
 
     #endregion
@@ -36,7 +38,10 @@ public class ScoreHandler : MonoBehaviour {
         if (this.IncreaseScore) {
             this.Score += this.PointsPerSecond * Time.deltaTime;
         }
-        this.ScoreText.text =  Mathf.Round(this.Score).ToString().PadLeft(5, '0');
+        if (!this.CheckPoint) {
+            this.ScoreText.text = Mathf.Round(this.Score).ToString().PadLeft(5, '0');
+        }
+
     }
 
     #endregion
@@ -55,6 +60,17 @@ public class ScoreHandler : MonoBehaviour {
             if (!this.HighScoreText.IsActive())
                 this.HighScoreText.gameObject.SetActive(true);
         }
+    }
+
+    public IEnumerator CheckPointEffect() {
+        this.CheckPoint = true;
+        for (float i = 0f; i < 0.5f; i += 0.1f) {
+            this.ScoreText.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            this.ScoreText.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+        this.CheckPoint = false;
     }
 
     #endregion

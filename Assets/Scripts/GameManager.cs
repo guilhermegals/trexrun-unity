@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour {
         this.ScoreHandler.IncreaseScoreSpeed(this.SpeedScoreAmount);
         this.NextIncrease = Time.time + this.IncreaseDelay;
         SoundManager.Manager.PlaySound(this.CheckPointSound);
+        StartCoroutine(this.ScoreHandler.CheckPointEffect());
     }
 
     private void FinishGame() {
