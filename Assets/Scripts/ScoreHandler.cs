@@ -21,7 +21,7 @@ public class ScoreHandler : MonoBehaviour {
         this.IncreaseScore = true;
         this.Score = 1;
         this.HighScore = PlayerPrefs.GetFloat("HighScore");
-        this.HighScoreText.text = "00" + Mathf.Round(this.HighScore);
+        this.HighScoreText.text = "HI 00" + Mathf.Round(this.HighScore);
     }
 
 
