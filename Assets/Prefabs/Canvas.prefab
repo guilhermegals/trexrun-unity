@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -52.87, y: -50.739998}
-  m_SizeDelta: {x: 82.36, y: 24.08}
+  m_AnchoredPosition: {x: -45.6, y: -50.739998}
+  m_SizeDelta: {x: 67.8, y: 24.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &62751258
 CanvasRenderer:
@@ -76,7 +76,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0000
+  m_Text: 00000
 --- !u!1 &296879499
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -136.32999, y: -50.739998}
-  m_SizeDelta: {x: 84.56, y: 24.08}
+  m_AnchoredPosition: {x: -124.2, y: -50.739998}
+  m_SizeDelta: {x: 89.4, y: 24.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &296879502
 CanvasRenderer:
@@ -153,7 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HI 0000
+  m_Text: HI 00000
 --- !u!1 &1134472729
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +206,9 @@ MonoBehaviour:
   HighScoreText: {fileID: 296879501}
   Score: 0
   HighScore: 0
-  PointsPerSecond: 15
   IncreaseScore: 0
+  PointsPerSecond: 15
+  CheckPointSound: {fileID: 8300000, guid: 50c945d86d457e24a8dae5eb1563fa82, type: 3}
 --- !u!1 &4913660219418973994
 GameObject:
   m_ObjectHideFlags: 0

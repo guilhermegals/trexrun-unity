@@ -8,10 +8,13 @@ public class ScoreHandler : MonoBehaviour {
     public Text ScoreText;
     public Text HighScoreText;
 
+    [HideInInspector]
     public float Score;
+    [HideInInspector]
     public float HighScore;
-    public float PointsPerSecond;
+    [HideInInspector]
     public bool IncreaseScore;
+    public float PointsPerSecond;
 
     #endregion
 
@@ -21,7 +24,11 @@ public class ScoreHandler : MonoBehaviour {
         this.IncreaseScore = true;
         this.Score = 1;
         this.HighScore = PlayerPrefs.GetFloat("HighScore");
-        this.HighScoreText.text = "HI 00" + Mathf.Round(this.HighScore);
+
+        if (this.HighScore <= 0)
+            this.HighScoreText.gameObject.SetActive(false);
+
+        this.HighScoreText.text = "HI " + Mathf.Round(this.HighScore).ToString().PadLeft(5, '0');
     }
 
 
@@ -29,7 +36,7 @@ public class ScoreHandler : MonoBehaviour {
         if (this.IncreaseScore) {
             this.Score += this.PointsPerSecond * Time.deltaTime;
         }
-        this.ScoreText.text = "00" + Mathf.Round(this.Score);
+        this.ScoreText.text =  Mathf.Round(this.Score).ToString().PadLeft(5, '0');
     }
 
     #endregion
@@ -44,6 +51,9 @@ public class ScoreHandler : MonoBehaviour {
         if (this.Score > this.HighScore) {
             this.HighScore = this.Score;
             PlayerPrefs.SetFloat("HighScore", this.HighScore);
+
+            if (!this.HighScoreText.IsActive())
+                this.HighScoreText.gameObject.SetActive(true);
         }
     }
 

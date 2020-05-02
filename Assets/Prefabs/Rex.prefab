@@ -175,6 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpForce: 800
   OnGroundCheck: {fileID: 876565004}
+  JumpSound: {fileID: 8300000, guid: a2618d17c0943e2498f2ea7ef9f4843f, type: 3}
+  DeathSound: {fileID: 8300000, guid: 077142e0b4017f44e8398113225d48d9, type: 3}
 --- !u!50 &4881881096758257557
 Rigidbody2D:
   serializedVersion: 4

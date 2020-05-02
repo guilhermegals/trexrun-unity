@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25b1ecd1e1a9e24fa5bdc25ebb12eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedAmount: 100
+  SpeedAmount: 1.5
   SpeedScoreAmount: 1
+  CheckPointSound: {fileID: 8300000, guid: 50c945d86d457e24a8dae5eb1563fa82, type: 3}

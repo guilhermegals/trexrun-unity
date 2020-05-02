@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
     private float IncreaseDelay = 0.5f;
     private float NextIncrease;
 
+    public AudioClip CheckPointSound;
+
     #endregion
 
     #region [ Unity Functions ]
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour {
 
         this.ScoreHandler.IncreaseScoreSpeed(this.SpeedScoreAmount);
         this.NextIncrease = Time.time + this.IncreaseDelay;
+        SoundManager.Manager.PlaySound(this.CheckPointSound);
     }
 
     private void FinishGame() {
