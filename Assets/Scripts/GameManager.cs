@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Manager;
 
-    [SerializeField]
     private GameObject RestartButton;
-    [SerializeField]
     private GameObject TRex;
     private Rex TRexManager;
 
@@ -30,6 +28,11 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            this.RestartGame();
+        }
+
         this.GameOver = this.TRexManager.IsDead();
 
         if (this.GameOver) {
@@ -41,13 +44,26 @@ public class GameManager : MonoBehaviour {
 
     #endregion
 
+    #region [ Public Functions ]
+
+    public void RestartGame() {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    #endregion
+
     #region [ Private Functions ]
 
     private void StartGame(Scene scene, LoadSceneMode mode) {
         this.GameOver = false;
         this.Score = 0;
         Time.timeScale = 1;
-        this.RestartButton.SetActive(false);
+
+        this.RestartButton = GameObject.Find("RestartButton");
+        this.TRex = GameObject.Find("Rex");
+
+        if(this.RestartButton != null)
+            this.RestartButton.SetActive(false);
 
         this.TRexManager = this.TRex.GetComponent<Rex>();
         this.BackgroundElements = GameObject.FindWithTag("Background");

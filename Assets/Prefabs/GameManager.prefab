@@ -43,7 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25b1ecd1e1a9e24fa5bdc25ebb12eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartButton: {fileID: 0}
-  TRex: {fileID: 0}
   Score: 0
   HighScore: 0
