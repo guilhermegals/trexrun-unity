@@ -53,6 +53,14 @@ public class Rex : MonoBehaviour {
 
     #endregion
 
+    #region [ Public Functions ]
+
+    public bool IsDead() {
+        return this.Dead;
+    }
+
+    #endregion
+
     #region [ Private Functions ]
 
     private void Jump() {
