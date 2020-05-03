@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5222538472183974494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2884635029893970276}
+  - component: {fileID: 3378203560468246789}
+  m_Layer: 0
+  m_Name: BackgroundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2884635029893970276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222538472183974494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9926097, y: -0.6314869, z: -3.416665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3378203560468246789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222538472183974494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c302378a20a834693774dc68277b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloudObject: {fileID: 4624887522528449680, guid: 722508d7dfc9d5349b67c325aa56bff2,
+    type: 3}
+  ObstaclesObject:
+  - {fileID: 4015010628137578954, guid: a3839e16d7bb2f746b6426287cf8b1a5, type: 3}
+  - {fileID: 627959797787654365, guid: 62b2c5d67ea9a8d43ae5893f70f9c783, type: 3}
+  - {fileID: 5247538070590349811, guid: 5bf9ee73517af7444958e283ce33ae45, type: 3}
+  - {fileID: 8180088796798338830, guid: 0acae86dc6189f84fba159e670d610dd, type: 3}
+  - {fileID: 7233702304194139597, guid: 4c3b8d6d7bbe66e4ea73b255b700fa92, type: 3}
+  - {fileID: 2030940597426966438, guid: f383039198d75a04a9ac6f36045c74fb, type: 3}
+  - {fileID: 6862509917302970470, guid: 29105f67960d47440bf53af1ec7b16e8, type: 3}
+  BirdSpawnPosition:
+  - -1.5
+  - -0.65
+  - 0.65
+  CloudSpawnPosition:
+  - 1.7
+  - 1.2
+  - 2.2
+  DefaultSpawnX: 14

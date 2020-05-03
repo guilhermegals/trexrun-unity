@@ -10,6 +10,7 @@ TagManager:
   - Cloud
   - ResetWall
   - Cactus
+  - Background
   layers:
   - Default
   - TransparentFX

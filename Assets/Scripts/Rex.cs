@@ -6,6 +6,8 @@ public class Rex : MonoBehaviour {
 
     public float JumpForce;
     public Transform OnGroundCheck;
+    public AudioClip JumpSound;
+    public AudioClip DeathSound;
 
     private bool OnGround = true;
     private bool Jumping = false;
@@ -28,6 +30,7 @@ public class Rex : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && this.OnGround && !this.Lowering) {
             this.Jumping = true;
+            SoundManager.Manager.PlaySound(this.JumpSound);
         }
 
         this.Lowering = Input.GetKey(KeyCode.DownArrow);
@@ -48,7 +51,16 @@ public class Rex : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag.Equals("Bird") || collision.tag.Equals("Cactus")) {
             this.Die();
+            SoundManager.Manager.PlaySound(this.DeathSound);
         }
+    }
+
+    #endregion
+
+    #region [ Public Functions ]
+
+    public bool IsDead() {
+        return this.Dead;
     }
 
     #endregion
@@ -63,6 +75,7 @@ public class Rex : MonoBehaviour {
     private void Fall() {
         this.Rigidbody.AddForce(new Vector2(0, -(this.JumpForce / 3)));
         this.Jumping = false;
+        
     }
 
     private void UpdateAnimations() {
