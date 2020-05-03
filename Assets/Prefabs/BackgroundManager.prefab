@@ -45,8 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudObject: {fileID: 4624887522528449680, guid: 722508d7dfc9d5349b67c325aa56bff2,
     type: 3}
-  ParentObject: {fileID: 9013744456897295020, guid: c981ec773ba9ed942bdcff1d1baed190,
-    type: 3}
   ObstaclesObject:
   - {fileID: 4015010628137578954, guid: a3839e16d7bb2f746b6426287cf8b1a5, type: 3}
   - {fileID: 627959797787654365, guid: 62b2c5d67ea9a8d43ae5893f70f9c783, type: 3}
@@ -55,5 +53,12 @@ MonoBehaviour:
   - {fileID: 7233702304194139597, guid: 4c3b8d6d7bbe66e4ea73b255b700fa92, type: 3}
   - {fileID: 2030940597426966438, guid: f383039198d75a04a9ac6f36045c74fb, type: 3}
   - {fileID: 6862509917302970470, guid: 29105f67960d47440bf53af1ec7b16e8, type: 3}
+  BirdSpawnPosition:
+  - -1.5
+  - -0.65
+  - 0.65
+  CloudSpawnPosition:
+  - 1.7
+  - 1.2
+  - 2.2
   DefaultSpawnX: 14
-  DefaultSpawnY: -0.15

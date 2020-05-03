@@ -12,10 +12,16 @@ public class BackgroundManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] ObstaclesObject;
 
+    [SerializeField]
+    private float[] BirdSpawnPosition;
+
+    [SerializeField]
+    private float[] CloudSpawnPosition;
+
     public static BackgroundManager Manager = null;
 
     [SerializeField]
-    private float DefaultSpawnX = 14f;
+    private float DefaultSpawnX = 9f;
 
     private int CheckPoints = 0;
 
@@ -42,19 +48,18 @@ public class BackgroundManager : MonoBehaviour {
         obstacleElement.IncreaseSpeed(GameManager.Manager.SpeedAmount * this.CheckPoints);
 
         float positionY = obstacleClone.transform.position.y;
-        if(obstacleElement.GetBackgroundType() == BackgroundType.Bird) {
-            positionY = Random.Range(0, 3) * 0.8f;
+        if (obstacleElement.GetBackgroundType() == BackgroundType.Bird) {
+            positionY = this.BirdSpawnPosition[Random.Range(0, 3)];
         }
 
-        obstacleClone.transform.position = new Vector3(obstacleObject.transform.position.x, positionY);
+        obstacleClone.transform.position = new Vector3(this.DefaultSpawnX, positionY);
     }
 
     public void GenerateCloud() {
         Random.InitState(System.DateTime.Now.Millisecond);
-        float randomY = Random.Range(2, 5) * 0.9f;
+        float randomY = this.CloudSpawnPosition[Random.Range(0, 3)];
 
         GameObject cloudClone = Instantiate(this.CloudObject, this.ParentObject.transform);
-
         cloudClone.transform.position = new Vector3(this.DefaultSpawnX, randomY);
     }
 
@@ -78,7 +83,6 @@ public class BackgroundManager : MonoBehaviour {
         } else {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
     #endregion

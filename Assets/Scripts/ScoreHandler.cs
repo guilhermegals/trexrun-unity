@@ -15,6 +15,7 @@ public class ScoreHandler : MonoBehaviour {
     public float HighScore;
     [HideInInspector]
     public bool IncreaseScore;
+    [HideInInspector]
     public bool CheckPoint = false;
     public float PointsPerSecond;
 
@@ -32,7 +33,6 @@ public class ScoreHandler : MonoBehaviour {
 
         this.HighScoreText.text = "HI " + Mathf.Round(this.HighScore).ToString().PadLeft(5, '0');
     }
-
 
     void Update() {
         if (this.IncreaseScore) {
@@ -65,9 +65,11 @@ public class ScoreHandler : MonoBehaviour {
     public IEnumerator CheckPointEffect() {
         this.CheckPoint = true;
         for (float i = 0f; i < 0.5f; i += 0.1f) {
-            this.ScoreText.enabled = false;
+            if(this.ScoreText != null)
+                this.ScoreText.enabled = false;
             yield return new WaitForSeconds(0.1f);
-            this.ScoreText.enabled = true;
+            if (this.ScoreText != null)
+                this.ScoreText.enabled = true;
             yield return new WaitForSeconds(0.1f);
         }
         this.CheckPoint = false;
