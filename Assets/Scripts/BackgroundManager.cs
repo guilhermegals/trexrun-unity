@@ -17,8 +17,7 @@ public class BackgroundManager : MonoBehaviour {
     [SerializeField]
     private float DefaultSpawnX = 14f;
 
-    [SerializeField]
-    private float DefaultSpawnY = -0.15f;
+    private int CheckPoints = 0;
 
     #endregion
 
@@ -27,6 +26,7 @@ public class BackgroundManager : MonoBehaviour {
     void Awake() {
         this.Singleton();
         this.ParentObject = GameObject.Find("Background");
+        this.CheckPoints = 0;
     }
 
     #endregion
@@ -36,17 +36,16 @@ public class BackgroundManager : MonoBehaviour {
     public void GenerateObstacle() {
         Random.InitState(System.DateTime.Now.Millisecond);
         GameObject obstacleObject = this.ObstaclesObject[Random.Range(0, this.ObstaclesObject.Length)];
-        GameObject obstacleClone = Instantiate(obstacleObject, obstacleObject.transform);
+        GameObject obstacleClone = Instantiate(obstacleObject, this.ParentObject.transform);
 
         Element obstacleElement = obstacleClone.GetComponent<Element>();
+        obstacleElement.IncreaseSpeed(GameManager.Manager.SpeedAmount * this.CheckPoints);
 
         float positionY = obstacleClone.transform.position.y;
-        Debug.Log(obstacleElement.GetBackgroundType());
         if(obstacleElement.GetBackgroundType() == BackgroundType.Bird) {
             positionY = Random.Range(0, 3) * 0.8f;
         }
 
-        obstacleClone.transform.parent = this.ParentObject.transform;
         obstacleClone.transform.position = new Vector3(obstacleObject.transform.position.x, positionY);
     }
 
@@ -54,9 +53,8 @@ public class BackgroundManager : MonoBehaviour {
         Random.InitState(System.DateTime.Now.Millisecond);
         float randomY = Random.Range(2, 5) * 0.9f;
 
-        GameObject cloudClone = Instantiate(this.CloudObject, this.CloudObject.transform);
+        GameObject cloudClone = Instantiate(this.CloudObject, this.ParentObject.transform);
 
-        cloudClone.transform.parent = this.ParentObject.transform;
         cloudClone.transform.position = new Vector3(this.DefaultSpawnX, randomY);
     }
 
@@ -66,6 +64,8 @@ public class BackgroundManager : MonoBehaviour {
         foreach (BackgroundElement element in elements) {
             element.IncreaseSpeed(speedAmount);
         }
+
+        this.CheckPoints++;
     }
 
     #endregion

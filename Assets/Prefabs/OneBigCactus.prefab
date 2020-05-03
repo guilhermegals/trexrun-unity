@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8180088796798338818}
-  - component: {fileID: 8180088796798338817}
   - component: {fileID: 8180088796798338816}
   - component: {fileID: 8180088796798338831}
+  - component: {fileID: -466554909758890867}
   m_Layer: 0
   m_Name: OneBigCactus
   m_TagString: Cactus
@@ -33,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8180088796798338817
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8180088796798338830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7497759, y: 1.4663267, z: 1}
-  m_Center: {x: -0.000000059604645, y: 0.017060757, z: 0}
 --- !u!212 &8180088796798338816
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,3 +98,29 @@ MonoBehaviour:
   Speed: 5
   Type: 1
   IncreaseElementSpeed: 1
+--- !u!61 &-466554909758890867
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180088796798338830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.010780156}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.78125, y: 1.5625}
+    newSize: {x: 0.78125, y: 1.5625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7237549, y: 1.5409397}
+  m_EdgeRadius: 0

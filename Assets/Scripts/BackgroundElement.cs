@@ -5,7 +5,7 @@ public abstract class BackgroundElement : MonoBehaviour{
     #region [ Properties ]
 
     [SerializeField]
-    public float Speed = 1f;
+    protected float Speed = 1f;
 
     [SerializeField]
     private BackgroundType Type;
