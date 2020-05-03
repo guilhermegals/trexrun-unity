@@ -8,7 +8,7 @@ public abstract class BackgroundElement : MonoBehaviour{
     public float Speed = 1f;
 
     [SerializeField]
-    private string Name;
+    private BackgroundType Type;
 
     [SerializeField]
     private bool IncreaseElementSpeed = false;
@@ -26,6 +26,10 @@ public abstract class BackgroundElement : MonoBehaviour{
     public void IncreaseSpeed(float amount) {
         if(this.IncreaseElementSpeed)
             this.Speed += amount;
+    }
+
+    public BackgroundType GetBackgroundType() {
+        return this.Type;
     }
 
     #endregion

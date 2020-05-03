@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour {
     private Rex RexManager;
     private ScoreHandler ScoreHandler;
 
-    private GameObject BackgroundElements;
-
     private bool GameOver;
     public float SpeedAmount = 0.1f;
     public float SpeedScoreAmount = 1f;
@@ -68,7 +66,6 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 1;
 
         this.ScoreHandler = GameObject.FindObjectOfType<ScoreHandler>();
-        this.BackgroundElements = GameObject.FindWithTag("Background");
         this.RestartButton = GameObject.Find("RestartButton");
         this.Rex = GameObject.Find("Rex");
         this.GameOverText = GameObject.Find("GameOver");
@@ -85,12 +82,7 @@ public class GameManager : MonoBehaviour {
         if (Time.time < this.NextIncrease)
             return;
 
-        BackgroundElement[] elements = this.BackgroundElements.GetComponentsInChildren<BackgroundElement>();
-
-        foreach (BackgroundElement element in elements) {
-            element.IncreaseSpeed(this.SpeedAmount);
-        }
-
+        BackgroundManager.Manager.IncreseBackgroundSpeed(this.SpeedAmount);
         this.ScoreHandler.IncreaseScoreSpeed(this.SpeedScoreAmount);
         this.NextIncrease = Time.time + this.IncreaseDelay;
         SoundManager.Manager.PlaySound(this.CheckPointSound);

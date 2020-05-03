@@ -122,5 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  Name: Ground
+  Type: 4
   IncreaseElementSpeed: 1

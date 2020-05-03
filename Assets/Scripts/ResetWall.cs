@@ -11,6 +11,12 @@ public class ResetWall : MonoBehaviour {
             ground.DestroyGroundFather();
         }else if (collision.tag.Equals("Bird") || collision.tag.Equals("Cactus") || collision.tag.Equals("Cloud")) {
             Destroy(collision.gameObject);
+
+            if (collision.tag.Equals("Bird") || collision.tag.Equals("Cactus")) {
+                BackgroundManager.Manager.GenerateObstacle();
+            } else if (collision.tag.Equals("Cloud")) {
+                BackgroundManager.Manager.GenerateCloud();
+            }
         }
     }
 
