@@ -1,5 +1,6 @@
 # TRex Run
 Jogo TRex Run desenvolvido utilizando a Unity.
+[Download](https://guilhermegals.itch.io/trex-run)
 
 ## Funcionalidades Desenvolvidas
 * Movimentação do cenário
