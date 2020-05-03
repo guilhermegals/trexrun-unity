@@ -31,10 +31,7 @@ public class Ground : BackgroundElement {
     }
 
     public void SetGroundFather(GameObject father) {
-        if (father != null) {
-            this.GroundFather = father;
-            this.transform.parent = father.transform.parent;
-        }
+        this.GroundFather = father;
     }
 
     public void DestroyGroundFather() {

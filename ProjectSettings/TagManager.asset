@@ -10,8 +10,6 @@ TagManager:
   - Cloud
   - ResetWall
   - Cactus
-  - GameObjects
-  - Background
   layers:
   - Default
   - TransparentFX

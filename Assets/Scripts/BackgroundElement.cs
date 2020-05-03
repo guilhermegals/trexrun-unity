@@ -14,12 +14,4 @@ public abstract class BackgroundElement : MonoBehaviour{
     protected abstract void Move();
 
     #endregion
-
-    #region [ Public Functions ]
-
-    public void IncreaseSpeed(float amount) {
-        this.Speed += amount;
-    }
-
-    #endregion
 }
