@@ -1,14 +1,14 @@
 # TRex Run
-Jogo TRex Run desenvolvido utilizando a Unity.
+TRex Run game developed in Unity 2D.
 [Download](https://guilhermegals.itch.io/trex-run)
 
-## Funcionalidades Desenvolvidas
-* Movimentação do cenário
-* Movimetação do TRex
-* Geração de obstáculos
-* Marcador de pontos
+## Features developed
+* Scenery movimentation
+* TRex movimentation
+* Obstacles generating
+* Score pointer
 
-# Tecnologias Utilizados
+# Technologies
 * Unity
 * C#
 
@@ -19,4 +19,4 @@ Jogo TRex Run desenvolvido utilizando a Unity.
 **Game Over** <br/>
 ![Game Over](https://github.com/guilhermegals/Imagens/blob/master/TrexRunGameOver.png "Game Over")
 
-**Desenvolvido por Guilherme Augusto Leite Santos em 2020**
+**Developed by Guilherme Augusto Leite Santos in 2020**
